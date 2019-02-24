@@ -114,7 +114,7 @@ export const ControlMid = styled.div`
 `;
 
 export const ControlButtons = styled.div`
-  width: 290px;
+  width: 400px;
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -122,6 +122,7 @@ export const ControlButtons = styled.div`
   padding-right: -5px;
   display: flex;
   align-items: center;
+  user-select: none;
   button {
     cursor: pointer;
     outline: none;
@@ -166,6 +167,28 @@ export const ControlButtons = styled.div`
   }
 `;
 
+export const VolumeControl = styled.input.attrs({ type: 'range' })`
+  width: 100px;
+  line-height: ${height};
+  height: 10px;
+  appearance: none;
+  border: 1.2px solid ${buttonColor};
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(#36c37d, #36c37d) no-repeat;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1.2px solid ${buttonColor};
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    box-shadow: 0px 0px 1px #0d0d0d;
+    z-index: 9999;
+  }
+`;
+
 export const ControlRight = styled.div`
   width: 33%;
   height: 100%;
@@ -207,16 +230,16 @@ export const ControlAddons = styled.div`
 
 export const ControlRange = styled.input.attrs({ type: 'range' })`
   width: 100%;
-  height: 3px;
+  height: 4px;
   position: absolute;
-  top: -3px;
+  top: -4px;
   left: 0;
   z-index: 9999;
   appearance: none;
   border: none;
   outline: none;
   cursor: pointer;
-  background: -webkit-linear-gradient(#36cc7d, #ddd) no-repeat;
+  background: -webkit-linear-gradient(#36c37d, #36c37d) no-repeat;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: 1.2px solid ${buttonColor};
@@ -239,7 +262,7 @@ export const CoverWrap = styled.div`
 `;
 
 export const CoverBackground = styled.div`
-  background-size: cover;
+  background-size: cover !important;
   filter: blur(8px);
   width: 100%;
   height: 100%;
@@ -247,6 +270,7 @@ export const CoverBackground = styled.div`
   top: 0;
   left: 0;
   z-index: 998;
+  transition: all 0.3s ease;
 `;
 
 export const CoverDisplay = styled.div`
@@ -293,6 +317,7 @@ export const CoverImage = styled.div`
   height: 100%;
   float: left;
   border-radius: 5px;
+  user-select: none;
   img {
     border-radius: 5px;
     display: block;
@@ -318,6 +343,7 @@ export const CoverInfo = styled.div`
   font-size: ${fontBig}px;
   font-family: ${fontFamily};
   color: #eeeeee;
+  user-select: none;
   p,
   span {
     margin: ${margin}px;
@@ -345,6 +371,8 @@ export const LyricsContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   overflow: auto;
+  text-align: center;
+  font-family: ${fontFamily};
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
   ::-webkit-scrollbar {

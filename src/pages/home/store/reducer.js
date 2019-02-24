@@ -1,15 +1,12 @@
 import * as constants from './constants';
-import axios from 'axios';
 
 const defaultState = {
-  playState: 0,
-  imgUrl: '',
-  musicUrl: '',
+  covered: false,
   currentTime: 0,
   duration: 0,
-  covered: false,
-  musicList: [{}],
-  index: [0]
+  index: 0,
+  musicList: [],
+  playState: 1
 };
 
 const changePlayState = (state, action) => {
@@ -38,7 +35,7 @@ const changeCovered = (state, action) => {
 
 const changeMusicList = (state, action) => {
   const newState = JSON.parse(JSON.stringify(state));
-  newState.musicList = action.data;
+  newState.musicList = action.musicList;
   return newState;
 };
 

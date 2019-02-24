@@ -13,44 +13,126 @@ import {
   ControlIcons,
   ControlButtons,
   ControlAddons,
-  ControlRange
+  ControlRange,
+  VolumeControl
 } from '../style';
 
 class Controller extends PureComponent {
   constructor(props) {
     super(props);
-    this.headerText = React.createRef();
-    this.headerContainer = React.createRef();
-    this.player = React.createRef();
-    this.progressBar = React.createRef();
+    this.state = {
+      currentMusic: null,
+      volume: 100,
+      muted: false
+    };
     this.handlePlay = this.handlePlay.bind(this);
     this.handleProgressChange = this.handleProgressChange.bind(this);
+    this.handleVolumeChange = this.handleVolumeChange.bind(this);
+    this.handleMute = this.handleMute.bind(this);
     this.playHandler = null;
+  }
+
+  renderPlayer() {
+    if (!this.state.currentMusic) {
+      return <audio src={'/'} ref="player" />;
+    }
+    return (
+      <audio
+        src={this.state.currentMusic.musicUrl}
+        ref="player"
+        autoPlay
+        volume={`${this.state.volume / 100}`}
+      />
+    );
+  }
+
+  renderThumbnail() {
+    if (!this.state.currentMusic) {
+      return (
+        <img
+          src="img/loading.gif"
+          alt=""
+          onClick={() => this.props.handleCover(true)}
+        />
+      );
+    } else {
+      return (
+        <img
+          src={this.state.currentMusic.imgUrl}
+          alt="img/loading.gif"
+          onClick={() => this.props.handleCover(true)}
+        />
+      );
+    }
+  }
+
+  renderHeader() {
+    if (!this.state.currentMusic) {
+      return <span ref="headerText">{'Loading Music Name'}</span>;
+    } else {
+      return <span ref="headerText">{this.state.currentMusic.name}</span>;
+    }
+  }
+
+  renderTimeStamp() {
+    if (!this.state.currentMusic) {
+      return (
+        <p className="control-time">
+          {this.formatTime(0)}/{this.formatTime(0)}
+        </p>
+      );
+    }
+    return (
+      <p className="control-time">
+        {this.formatTime(this.props.currentTime)}/
+        {this.formatTime(this.props.duration)}
+      </p>
+    );
+  }
+
+  renderVolume() {
+    return (
+      <VolumeControl
+        ref="volume"
+        style={{ backgroundSize: `${this.state.volume}% 100%` }}
+        onChange={this.handleVolumeChange}
+        min="0"
+        max="100"
+        value={this.state.volume}
+      />
+    );
+  }
+
+  handleVolumeChange() {
+    this.setState({ volume: this.refs.volume.value });
+    this.refs.player.volume = this.refs.volume.value / 100;
+    console.log(this.refs.player.volume);
+  }
+
+  handleMute() {
+    let nextMuted = !this.state.muted;
+    this.refs.player.muted = nextMuted;
+    this.setState({ muted: !this.state.muted });
   }
 
   render() {
     return (
       <ControlWrap>
+        {this.renderPlayer()}
         <ControlRange
           min="0"
-          max={this.props.duration || 0}
+          max={this.props.duration}
           value={this.props.currentTime}
-          ref={this.progressBar}
+          ref="progressBar"
           onChange={this.handleProgressChange}
         />
         <ControlLeft>
           <ControlThumbnail>
-            <a>
-              <img
-                src={this.props.imgUrl}
-                alt=""
-                onClick={() => this.props.handleCover(true)}
-              />
-            </a>
+            <a>{this.renderThumbnail()}</a>
           </ControlThumbnail>
           <ControlInfo>
-            <ControlHeader ref={this.headerContainer}>
-              <span ref={this.headerText}>{this.props.name}</span>
+            <ControlHeader ref="headerContainer">
+              {this.renderHeader()}
             </ControlHeader>
             <ControlIcons>
               <span className="iconfont">&#xe640;</span>
@@ -66,6 +148,7 @@ class Controller extends PureComponent {
               className="control-small iconfont"
               onClick={() => {
                 this.props.changeIndex(this.props.index - 1);
+                this.props.changePlayState(1);
               }}
             >
               &#xe74e;
@@ -77,19 +160,35 @@ class Controller extends PureComponent {
               className="control-small iconfont"
               onClick={() => {
                 this.props.changeIndex(this.props.index + 1);
+                this.props.changePlayState(1);
               }}
             >
               &#xe750;
             </button>
-            <span className="iconfont">&#xe729;</span>
+
+            {this.state.muted ? (
+              <span
+                className="iconfont"
+                id="btn-volume"
+                onClick={this.handleMute}
+              >
+                &#xe692;
+              </span>
+            ) : (
+              <span
+                className="iconfont"
+                id="btn-volume"
+                onClick={this.handleMute}
+              >
+                &#xe729;
+              </span>
+            )}
+            {this.renderVolume()}
           </ControlButtons>
         </ControlMid>
         <ControlRight>
           <ControlAddons>
-            <p className="control-time">
-              {this.formatTime(this.props.currentTime)}/
-              {this.formatTime(this.props.duration)}
-            </p>
+            {this.renderTimeStamp()}
             <p>
               <span>词</span>
             </p>
@@ -98,7 +197,6 @@ class Controller extends PureComponent {
             </p>
           </ControlAddons>
         </ControlRight>
-        <audio src={this.props.musicUrl} ref={this.player} />
       </ControlWrap>
     );
   }
@@ -107,16 +205,17 @@ class Controller extends PureComponent {
     let nextState = 1 - this.props.playState;
     this.props.changePlayState(nextState);
     if (nextState === 1) {
-      this.player.current.play();
+      this.refs.player.play();
     } else {
-      this.player.current.pause();
+      this.refs.player.pause();
     }
   }
 
   handleProgressChange() {
-    this.player.current.pause();
-    this.player.current.currentTime = this.progressBar.current.value;
-    this.player.current.play();
+    this.refs.player.pause();
+    this.refs.player.currentTime = this.refs.progressBar.value;
+    this.props.changeCurrentTime(this.refs.progressBar.value);
+    this.refs.player.play();
   }
 
   renderPlayButton() {
@@ -136,14 +235,14 @@ class Controller extends PureComponent {
   }
 
   slide() {
-    let containWidth = this.headerContainer.current.clientWidth;
-    let textWidth = this.headerText.current.clientWidth;
+    let containWidth = this.refs.headerContainer.clientWidth;
+    let textWidth = this.refs.headerText.clientWidth;
 
     let diff = textWidth - containWidth;
     if (diff < 0) {
       return;
     }
-    let speed = 15;
+    let speed = 8;
     let style = document.createElement('style');
     style.type = 'text/css';
     let animation = `
@@ -168,30 +267,43 @@ class Controller extends PureComponent {
 
   componentDidMount() {
     this.slide();
-    this.player.current.onplay = () => {
+    this.refs.player.onplay = () => {
       this.playHandler = setInterval(() => {
-        this.props.changeCurrentTime(this.player.current.currentTime);
+        this.props.changeCurrentTime(this.refs.player.currentTime);
       }, 1000);
     };
-    this.player.current.onpause = () => {
+    this.refs.player.onpause = () => {
       clearInterval(this.playHandler);
       this.playHandler = null;
     };
   }
 
-  componentWillReceiveProps() {
-    this.slide();
+  componentWillReceiveProps(nextProps) {
+    // judge if musicList / index is different
+    if (
+      this.props.musicList !== nextProps.musicList ||
+      this.props.index !== nextProps.index
+    ) {
+      this.slide();
+      this.setState({ currentMusic: nextProps.musicList[nextProps.index] });
+    }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (
       (!this.props.duration || this.props.duration === 0) &&
-      this.player.current.duration
+      this.refs.player.duration
     ) {
-      this.props.changeDuration(this.player.current.duration);
+      this.props.changeDuration(this.refs.player.duration);
+    }
+    if (
+      this.refs.player.duration &&
+      this.props.duration !== this.refs.player.duration
+    ) {
+      this.props.changeDuration(this.refs.player.duration);
     }
     // styling progress bar
-    this.progressBar.current.style.backgroundSize = `${(this.props.currentTime /
+    this.refs.progressBar.style.backgroundSize = `${(this.props.currentTime /
       this.props.duration) *
       100}% 100%`;
   }
@@ -209,16 +321,15 @@ class Controller extends PureComponent {
   }
 }
 
-const mapState = state => ({
-  playState: state.home.playState,
-  musicUrl: state.home.musicList[state.home.index].musicUrl,
-  imgUrl: state.home.musicList[state.home.index].imgUrl,
-  artist: state.home.musicList[state.home.index].artist,
-  currentTime: state.home.currentTime,
-  name: state.home.musicList[state.home.index].name,
-  duration: state.home.duration,
-  index: state.home.index
-});
+const mapState = state => {
+  return {
+    currentTime: state.home.currentTime,
+    duration: state.home.duration,
+    index: state.home.index,
+    musicList: state.home.musicList,
+    playState: state.home.playState
+  };
+};
 
 const mapDispatch = dispatch => ({
   changePlayState(playState) {

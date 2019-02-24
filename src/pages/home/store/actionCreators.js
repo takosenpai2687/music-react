@@ -21,24 +21,10 @@ export const changeCovered = covered => ({
   covered
 });
 
-const changeMusicList = data => {
+export const changeMusicList = musicList => {
   return {
     type: constants.changeMusicList,
-    data: data.musicList
-  };
-};
-
-export const getMusicList = () => {
-  return dispatch => {
-    axios
-      .get('/api/data.json')
-      .then(res => {
-        let data = res.data;
-        dispatch(changeMusicList(data));
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    musicList
   };
 };
 

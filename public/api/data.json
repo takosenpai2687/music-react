@@ -4,15 +4,29 @@
          "id":"001",
          "name":"My Truth～ロンド・カプリチオーソ by ENA",
          "musicUrl":"music/mytruth.mp3",
-         "imgUrl":"img/001.jpg",
+         "imgUrl":"img/mytruth.jpg",
          "artist":"Others"
       },
       {  
          "id":"002",
          "name":"Orange [Shigatsu wa Kimi no Uso ED 2]",
          "musicUrl":"music/Orange [Shigatsu wa Kimi no Uso ED 2].mp3",
-         "imgUrl":"img/002.jpg",
+         "imgUrl":"img/orange.jpg",
          "artist":"Others"
+      },
+      {  
+         "id":"003",
+         "name":"Perfect - Ed Sheeran",
+         "musicUrl":"music/Ed Sheeran - Perfect (Official Music Video) - YouTube.mp3",
+         "imgUrl":"img/perfect.png",
+         "artist":"Ed Sheeran"
+      },
+      {  
+         "id":"004",
+         "name":"Shape of You - Ed Sheeran",
+         "musicUrl":"music/Ed Sheeran - Shape of You [Official Video] - YouTube.mp3",
+         "imgUrl":"img/shapeofyou.jpg",
+         "artist":"Ed Sheeran"
       }
    ]
 }

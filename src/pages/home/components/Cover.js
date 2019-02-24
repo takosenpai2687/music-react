@@ -19,7 +19,93 @@ import {
 class Cover extends PureComponent {
   constructor(props) {
     super(props);
-    this.background = React.createRef();
+    this.state = {
+      currentMusic: null
+    };
+  }
+
+  renderImage() {
+    if (!this.state.currentMusic) {
+      return <img src={'img/loading.gif'} alt="" />;
+    } else {
+      return <img src={this.state.currentMusic.imgUrl} alt="" />;
+    }
+  }
+
+  renderBackground() {
+    if (!this.state.currentMusic) {
+      return (
+        <CoverBackground
+          ref="background"
+          style={{
+            background: `#262626 no-repeat center`
+          }}
+        />
+      );
+    } else {
+      return (
+        <CoverBackground
+          ref="background"
+          style={{
+            background: `url(${
+              this.state.currentMusic.imgUrl
+            }) no-repeat center`
+          }}
+        />
+      );
+    }
+  }
+
+  renderLyrics() {
+    return (
+      <p>
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+        12312312321
+        <br />
+      </p>
+    );
+  }
+
+  renderCoverInfo() {
+    if (!this.state.currentMusic) {
+      return (
+        <CoverInfo>
+          <p>正在加载歌曲名称</p>
+          <br />
+          <span>正在加载歌手信息</span>&nbsp;&nbsp;
+          <span>专辑：</span>
+        </CoverInfo>
+      );
+    }
+    return (
+      <CoverInfo>
+        <p>{this.state.currentMusic.name}</p>
+        <br />
+        <span>{this.state.currentMusic.artist}</span>&nbsp;&nbsp;
+        <span>专辑：123123</span>
+      </CoverInfo>
+    );
   }
 
   render() {
@@ -27,7 +113,7 @@ class Cover extends PureComponent {
       <CoverWrap
         style={{ height: this.props.covered ? 'calc(100% - 100px)' : '0' }}
       >
-        <CoverBackground ref={this.background} />
+        {this.renderBackground()}
         <CoverDisplay>
           <CoverHeader>
             <p
@@ -41,45 +127,11 @@ class Cover extends PureComponent {
           </CoverHeader>
           <CoverContentWrap>
             <CoverContent>
-              <CoverImage>
-                <img src={this.props.imgUrl} alt="" />
-              </CoverImage>
+              <CoverImage>{this.renderImage()}</CoverImage>
               <CoverLyricsWrap>
-                <CoverInfo>
-                  <p>{this.props.name}</p>
-                  <br />
-                  <span>{this.props.artist}</span>&nbsp;&nbsp;
-                  <span>专辑：123123</span>
-                </CoverInfo>
+                {this.renderCoverInfo()}
                 <CoverLyrics>
-                  <LyricsContainer>
-                    <p>
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                      12312312321
-                      <br />
-                    </p>
-                  </LyricsContainer>
+                  <LyricsContainer>{this.renderLyrics()}</LyricsContainer>
                 </CoverLyrics>
               </CoverLyricsWrap>
             </CoverContent>
@@ -89,21 +141,20 @@ class Cover extends PureComponent {
     );
   }
 
-  componentDidUpdate() {
-    if (!this.props.imgUrl || this.props.imgUrl === '') {
-      return;
+  componentWillReceiveProps(nextProps) {
+    if (
+      this.props.musicList !== nextProps.musicList ||
+      this.props.index !== nextProps.index
+    ) {
+      this.setState({ currentMusic: nextProps.musicList[nextProps.index] });
     }
-    console.log(this.props.imgUrl);
-    const style = `background: url(${this.props.imgUrl}) no-repeat; background-size: cover;`;
-    this.background.current.style = style;
   }
 }
 
 const mapState = state => ({
-  imgUrl: state.home.musicList[state.home.index].imgUrl,
   covered: state.home.covered,
-  name: state.home.musicList[state.home.index].name,
-  artist: state.home.musicList[state.home.index].artist
+  musicList: state.home.musicList,
+  index: state.home.index
 });
 
 const mapDispatch = dispatch => ({});

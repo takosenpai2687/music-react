@@ -25,7 +25,14 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    this.props.getMusicList();
+    this.getData();
+  }
+
+  getData() {
+    axios
+      .get('/api/data.json')
+      .then(res => this.props.getDataSucc(res))
+      .catch(err => console.log(err));
   }
 }
 
@@ -37,8 +44,10 @@ const mapDispatch = dispatch => ({
   changeCovered(covered) {
     dispatch(actionCreators.changeCovered(covered));
   },
-  getMusicList() {
-    dispatch(actionCreators.getMusicList());
+
+  getDataSucc(res) {
+    let musicList = res.data.musicList;
+    dispatch(actionCreators.changeMusicList(musicList));
   }
 });
 
