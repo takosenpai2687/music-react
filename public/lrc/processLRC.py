@@ -2,7 +2,7 @@ import re
 import json
 import io
 
-filename = 'luzhouyue'
+filename = 'rain'
 
 with io.open(filename+'.lrc', 'r', encoding='utf8') as f:
     content = f.readlines()

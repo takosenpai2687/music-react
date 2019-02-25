@@ -1,6 +1,7 @@
 import json
+import math
 
-filename = 'secretbase.json'
+filename = 'rain.json'
 
 with open(filename, 'r') as f:
     data = json.load(f)
@@ -8,10 +9,10 @@ with open(filename, 'r') as f:
 lrc = []
 for item in data:
     time = float(item['time'])
-    if time <12:
-        time = 0
-    else:
-        time -= 12
+    # if time <12:
+    #     time = 0
+    # else:
+    time = round(time, 2)
     lrc.append({'time': time, 'content': item['content']})
 
 with open(filename, 'w') as outfile:

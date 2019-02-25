@@ -1,43 +1,49 @@
 {
-  "musicList": [
-    {
-      "id": "001",
-      "name": "My Truth～ロンド・カプリチオーソ by ENA",
-      "musicUrl": "music/mytruth.mp3",
-      "imgUrl": "img/mytruth.jpg",
-      "artist": "Others"
-    },
-    {
-      "id": "002",
-      "name": "Secret Base〜君がくれたもの〜",
-      "musicUrl": "music/secretbase.mp3",
-      "imgUrl": "img/secretbase.jpg",
-      "artist": "ZONE",
-      "lyrics": "lrc/secretbase.json"
-    },
-    {
-      "id": "003",
-      "name": "玫瑰花的葬礼 - 许嵩",
-      "musicUrl": "music/meiguihuadezangli.mp3",
-      "imgUrl": "img/meiguihuadezangli.jpg",
-      "artist": "许嵩",
-      "lyrics": "lrc/meiguihuadezangli.json"
-    },
-    {
-      "id": "004",
-      "name": "Shape of You - Ed Sheeran",
-      "musicUrl": "music/Ed Sheeran - Shape of You [Official Video] - YouTube.mp3",
-      "imgUrl": "img/shapeofyou.jpg",
-      "artist": "Ed Sheeran",
-      "lyrics": "lrc/shapeofyou.json"
-    },
-    {
-      "id": "005",
-      "name": "庐州月",
-      "musicUrl": "music/luzhouyue.mp3",
-      "imgUrl": "img/luzhouyue.jpg",
-      "artist": "许嵩",
-      "lyrics": "lrc/luzhouyue.json"
-    }
+  "musicList":[
+     {
+        "id":"001",
+        "name":"光るなら",
+        "musicUrl":"music/hikarunara.mp3",
+        "imgUrl":"img/hikarunara.jpg",
+        "artist":"Goose house",
+        "lyrics":"lrc/hikarunara.json",
+        "album":"Milk"
+     },
+     {
+        "id":"002",
+        "name":"Rain - 言の葉の庭",
+        "musicUrl":"music/rain.mp3",
+        "imgUrl":"img/rain.jpg",
+        "artist":"秦基博",
+        "lyrics":"lrc/rain.json",
+        "album":"言ノ葉"
+     },
+     {
+        "id":"003",
+        "name":"玫瑰花的葬礼 - 许嵩",
+        "musicUrl":"music/meiguihuadezangli.mp3",
+        "imgUrl":"img/meiguihuadezangli.jpg",
+        "artist":"许嵩",
+        "lyrics":"lrc/meiguihuadezangli.json",
+        "album":"其它"
+     },
+     {
+        "id":"004",
+        "name":"庐州月",
+        "musicUrl":"music/luzhouyue.mp3",
+        "imgUrl":"img/luzhouyue.jpg",
+        "artist":"许嵩",
+        "lyrics":"lrc/luzhouyue.json",
+        "album":"寻雾启事"
+     },
+     {
+        "id":"005",
+        "name":"Shape of You - Ed Sheeran",
+        "musicUrl":"music/Ed Sheeran - Shape of You [Official Video] - YouTube.mp3",
+        "imgUrl":"img/shapeofyou.jpg",
+        "artist":"Ed Sheeran",
+        "lyrics":"lrc/shapeofyou.json",
+        "album":"Divide"
+     }
   ]
 }

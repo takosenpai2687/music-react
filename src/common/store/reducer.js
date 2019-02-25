@@ -4,7 +4,7 @@ const defaultState = {
   covered: false,
   currentTime: 0,
   duration: 0,
-  index: 3,
+  index: 0,
   musicList: [],
   playState: 1
 };

@@ -95,7 +95,7 @@ export const CoverLyricsWrap = styled.div`
   float: left;
   overflow: hidden;
   position: relative;
-  left: 100px;
+  left: 60px;
 `;
 
 export const CoverInfo = styled.div`

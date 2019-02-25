@@ -65,14 +65,11 @@ class Cover extends PureComponent {
 
   renderLyrics() {
     let height = 0;
-      if (
-        this.state.heightList &&
-        this.state.currentLine > this.state.midStart
-      ) {
-        height = this.state.heightList[
-          this.state.currentLine - this.state.midStart
-        ];
-      }
+    if (this.state.heightList && this.state.currentLine > this.state.midStart) {
+      height = this.state.heightList[
+        this.state.currentLine - this.state.midStart
+      ];
+    }
     return (
       <ul
         style={{
@@ -142,7 +139,7 @@ class Cover extends PureComponent {
         <p>{this.state.currentMusic.name}</p>
         <br />
         <span>{this.state.currentMusic.artist}</span>&nbsp;&nbsp;
-        <span>专辑：123123</span>
+        <span>专辑：{this.state.currentMusic.album}</span>
       </CoverInfo>
     );
   }
@@ -225,7 +222,6 @@ class Cover extends PureComponent {
         this.setState({ currentLine });
       }
       // set height and scroll
-      
     }
   }
 
