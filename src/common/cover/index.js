@@ -73,7 +73,6 @@ class Cover extends PureComponent {
           this.state.currentLine - this.state.midStart
         ];
       }
-    console.log(this.state.heightList);
     return (
       <ul
         style={{
@@ -197,7 +196,6 @@ class Cover extends PureComponent {
     if (this.state.heightList.length === 0 && this.props.covered) {
       // if covered but no heightlist, then initialize it
       try {
-        console.log('hi');
         let elements = Object.values(
           document.getElementsByClassName('lyrics-line')
         );

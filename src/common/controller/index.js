@@ -292,7 +292,6 @@ class Controller extends PureComponent {
   handleVolumeChange() {
     this.setState({ volume: this.refs.volume.value });
     this.refs.player.volume = this.refs.volume.value / 100;
-    console.log(this.refs.player.volume);
   }
 
   handleModeChange() {
