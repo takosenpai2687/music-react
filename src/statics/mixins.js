@@ -1,0 +1,11 @@
+export const height = 100;
+export const fontBig = 20;
+export const fontFamily = 'SimHei, STHeiti';
+export const iconSize = 24;
+export const margin = 10;
+export const boxShadow = '0 0 10px #727272';
+export const buttonColor = '#36c37d';
+// export const buttonColor = '#65D9A4';
+export const buttonHoverColor = '#20B76A';
+export const bgColor = '#262D3D';
+export const navIconColor = '#76798A';

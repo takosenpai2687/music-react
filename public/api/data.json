@@ -1,32 +1,43 @@
-{  
-   "musicList":[  
-      {  
-         "id":"001",
-         "name":"My Truth～ロンド・カプリチオーソ by ENA",
-         "musicUrl":"music/mytruth.mp3",
-         "imgUrl":"img/mytruth.jpg",
-         "artist":"Others"
-      },
-      {  
-         "id":"002",
-         "name":"Orange [Shigatsu wa Kimi no Uso ED 2]",
-         "musicUrl":"music/Orange [Shigatsu wa Kimi no Uso ED 2].mp3",
-         "imgUrl":"img/orange.jpg",
-         "artist":"Others"
-      },
-      {  
-         "id":"003",
-         "name":"Perfect - Ed Sheeran",
-         "musicUrl":"music/Ed Sheeran - Perfect (Official Music Video) - YouTube.mp3",
-         "imgUrl":"img/perfect.png",
-         "artist":"Ed Sheeran"
-      },
-      {  
-         "id":"004",
-         "name":"Shape of You - Ed Sheeran",
-         "musicUrl":"music/Ed Sheeran - Shape of You [Official Video] - YouTube.mp3",
-         "imgUrl":"img/shapeofyou.jpg",
-         "artist":"Ed Sheeran"
-      }
-   ]
+{
+  "musicList": [
+    {
+      "id": "001",
+      "name": "My Truth～ロンド・カプリチオーソ by ENA",
+      "musicUrl": "music/mytruth.mp3",
+      "imgUrl": "img/mytruth.jpg",
+      "artist": "Others"
+    },
+    {
+      "id": "002",
+      "name": "Secret Base〜君がくれたもの〜",
+      "musicUrl": "music/secretbase.mp3",
+      "imgUrl": "img/secretbase.jpg",
+      "artist": "ZONE",
+      "lyrics": "lrc/secretbase.json"
+    },
+    {
+      "id": "003",
+      "name": "玫瑰花的葬礼 - 许嵩",
+      "musicUrl": "music/meiguihuadezangli.mp3",
+      "imgUrl": "img/meiguihuadezangli.jpg",
+      "artist": "许嵩",
+      "lyrics": "lrc/meiguihuadezangli.json"
+    },
+    {
+      "id": "004",
+      "name": "Shape of You - Ed Sheeran",
+      "musicUrl": "music/Ed Sheeran - Shape of You [Official Video] - YouTube.mp3",
+      "imgUrl": "img/shapeofyou.jpg",
+      "artist": "Ed Sheeran",
+      "lyrics": "lrc/shapeofyou.json"
+    },
+    {
+      "id": "005",
+      "name": "庐州月",
+      "musicUrl": "music/luzhouyue.mp3",
+      "imgUrl": "img/luzhouyue.jpg",
+      "artist": "许嵩",
+      "lyrics": "lrc/luzhouyue.json"
+    }
+  ]
 }

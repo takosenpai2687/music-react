@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { ResetCSS } from './style';
-import {IconfontCSS} from './statics/iconfont'
+import { IconfontCSS } from './statics/iconfont';
 import Home from './pages/home';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <div>
+          <div style={{ width: '100%', height: '100%' }}>
             <ResetCSS />
             <IconfontCSS />
             <Route path="/" exact component={Home} />
