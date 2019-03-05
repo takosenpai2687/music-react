@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { ResetCSS } from './style';
+import { ResetCSS, PageWrap } from './style';
 import { IconfontCSS } from './statics/iconfont';
 import Home from './pages/home';
+import Controller from './common/controller';
+import Cover from './common/cover';
+import Navbar from './common/navbar';
+import Magnifer from './common/magnifier';
 
 class App extends Component {
   render() {
@@ -14,7 +18,13 @@ class App extends Component {
           <div style={{ width: '100%', height: '100%' }}>
             <ResetCSS />
             <IconfontCSS />
-            <Route path="/" exact component={Home} />
+            <Navbar />
+            <PageWrap>
+              <Route path="/" exact component={Home} />
+              <Controller />
+              <Cover />
+              <Magnifer />
+            </PageWrap>
           </div>
         </BrowserRouter>
       </Provider>

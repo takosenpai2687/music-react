@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import {
-  fontBig,
   fontFamily,
   iconSize,
   margin,
@@ -17,18 +16,14 @@ export const CoverWrap = styled.div`
   bottom: ${height}px;
   z-index: 9;
   width: 100%;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
 `;
 
 export const CoverBackground = styled.div`
-  background-size: 150% !important;
-  filter: blur(12px);
+  background-size: 100% !important;
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 998;
   transition: all 0.3s ease;
 `;
 
@@ -44,7 +39,7 @@ export const CoverDisplay = styled.div`
 
 export const CoverHeader = styled.div`
   height: ${height}px;
-  width: 100%;
+  width: ${height}px;
   line-height: ${height}px;
   p {
     font-size: ${iconSize}px;
@@ -101,6 +96,7 @@ export const CoverLyricsWrap = styled.div`
 export const CoverInfo = styled.div`
   height: ${height}px;
   width: 100%;
+  margin-left: 50px;
   font-family: ${fontFamily};
   color: #eeeeee;
   user-select: none;
@@ -131,7 +127,7 @@ export const CoverLyrics = styled.div`
 
 export const LyricsContainer = styled.div`
   position: absolute;
-  list-style-type:none;
+  list-style-type: none;
   top: 0;
   left: 10px;
   width: 300px;

@@ -24,9 +24,10 @@ class Cover extends PureComponent {
       currentMusic: null,
       heightList: [],
       lyrics: null,
-      midStart: 4,
-      midEnd: 4,
-      currentLine: 0
+      midStart: 3,
+      midEnd: 3,
+      currentLine: 0,
+      height: 0
     };
     this.hideCover = this.hideCover.bind(this);
   }
@@ -51,36 +52,64 @@ class Cover extends PureComponent {
       );
     } else {
       return (
-        <CoverBackground
-          ref="background"
-          style={{
-            background: `url(${
-              this.state.currentMusic.imgUrl
-            }) no-repeat center`
-          }}
-        />
+        <React.Fragment>
+          <CoverBackground
+            ref="background"
+            style={{
+              background: `url(${
+                this.state.currentMusic.imgUrl
+              }) no-repeat center`,
+              zIndex: '997',
+              overflow: 'hidden',
+              top: '0',
+              left: '0'
+            }}
+          >
+            <CoverBackground
+              ref="background"
+              style={{
+                background: `url(${
+                  this.state.currentMusic.imgUrl
+                }) no-repeat center`,
+                filter: 'blur(12px)',
+                zIndex: '998',
+                width: '120%',
+                height: '120%',
+                top: '-10%',
+                left: '-10%'
+              }}
+            />
+          </CoverBackground>
+        </React.Fragment>
       );
     }
   }
 
   renderLyrics() {
-    let height = 0;
+    return (
+      <LyricsContainer ref="lyricsContainer" scrollTop={this.state.height}>
+        <ul
+          ref="lyricsList"
+          style={{
+            position: 'absolute',
+            transform: `translateY(${-this.state.height}px)`,
+            transition: 'all .3s ease-out'
+          }}
+        >
+          {this.getLyrics()}
+        </ul>
+      </LyricsContainer>
+    );
+  }
+
+  getHeight() {
+    let height;
     if (this.state.heightList && this.state.currentLine > this.state.midStart) {
       height = this.state.heightList[
         this.state.currentLine - this.state.midStart
       ];
     }
-    return (
-      <ul
-        style={{
-          transform: `translateY(-${height}px)`,
-          transition: 'all 0.3s ease'
-        }}
-        ref="lyricsList"
-      >
-        {this.getLyrics()}
-      </ul>
-    );
+    return height;
   }
 
   getLyrics() {
@@ -138,8 +167,8 @@ class Cover extends PureComponent {
       <CoverInfo>
         <p>{this.state.currentMusic.name}</p>
         <br />
-        <span>{this.state.currentMusic.artist}</span>&nbsp;&nbsp;
-        <span>专辑：{this.state.currentMusic.album}</span>
+        <span>歌手：{this.state.currentMusic.artist}</span>&nbsp;&nbsp;
+        <span>专辑：{this.state.currentMusic.album || '未知'}</span>
       </CoverInfo>
     );
   }
@@ -161,11 +190,7 @@ class Cover extends PureComponent {
               <CoverImage>{this.renderImage()}</CoverImage>
               <CoverLyricsWrap>
                 {this.renderCoverInfo()}
-                <CoverLyrics>
-                  <LyricsContainer ref="lyricsContainer">
-                    {this.renderLyrics()}
-                  </LyricsContainer>
-                </CoverLyrics>
+                <CoverLyrics>{this.renderLyrics()}</CoverLyrics>
               </CoverLyricsWrap>
             </CoverContent>
           </CoverContentWrap>
@@ -176,16 +201,26 @@ class Cover extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     // if first load or change song
-    if (!this.props.musicList.length || this.props.index !== nextProps.index) {
+    if (!this.props.playList.length || this.props.index !== nextProps.index) {
       this.setState({
-        currentMusic: nextProps.musicList[nextProps.index],
+        currentMusic: nextProps.playList[nextProps.index],
         lyrics: null,
         currentLine: 0,
-        heightList: []
+        heightList: [],
+        height: 0
       });
       this.getLyrics();
     }
+    // calc height
+    let height = this.getHeight();
+    if (this.state.height !== height) {
+      this.setState({ height });
+    }
     this.initSlide();
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
   }
 
   async initSlide() {
@@ -228,11 +263,15 @@ class Cover extends PureComponent {
   hideCover() {
     this.props.changeCovered(false);
   }
+
+  componentWillUnmount() {
+    console.log('unmount');
+  }
 }
 
 const mapState = state => ({
   covered: state.common.covered,
-  musicList: state.common.musicList,
+  playList: state.common.playList,
   index: state.common.index,
   currentTime: state.common.currentTime
 });

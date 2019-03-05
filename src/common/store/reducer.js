@@ -1,11 +1,11 @@
 import * as constants from './constants';
 
 const defaultState = {
-  covered: false,
+  covered: true,
   currentTime: 0,
   duration: 0,
   index: 0,
-  musicList: [],
+  playList: [],
   playState: 1
 };
 
@@ -33,9 +33,9 @@ const changeCovered = (state, action) => {
   return newState;
 };
 
-const changeMusicList = (state, action) => {
+const changePlayList = (state, action) => {
   const newState = JSON.parse(JSON.stringify(state));
-  newState.musicList = action.musicList;
+  newState.playList = action.playList;
   return newState;
 };
 
@@ -45,9 +45,9 @@ const changeIndex = (state, action) => {
     return state;
   }
   if (index < 0) {
-    index = state.musicList.length - 1;
+    index = state.playList.length - 1;
   }
-  if (index > state.musicList.length - 1) {
+  if (index > state.playList.length - 1) {
     index = 0;
   }
   const newState = JSON.parse(JSON.stringify(state));
@@ -65,8 +65,8 @@ export default (state = defaultState, action) => {
       return changeDuration(state, action);
     case constants.changeCovered:
       return changeCovered(state, action);
-    case constants.changeMusicList:
-      return changeMusicList(state, action);
+    case constants.changePlayList:
+      return changePlayList(state, action);
     case constants.changeIndex:
       return changeIndex(state, action);
     default:

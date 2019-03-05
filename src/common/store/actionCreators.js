@@ -20,10 +20,10 @@ export const changeCovered = covered => ({
   covered
 });
 
-export const changeMusicList = musicList => {
+export const changePlayList = playList => {
   return {
-    type: constants.changeMusicList,
-    musicList
+    type: constants.changePlayList,
+    playList
   };
 };
 

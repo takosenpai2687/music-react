@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
-import Controller from '../../common/controller';
-import Cover from '../../common/cover';
-import Navbar from '../../common/navbar';
-import axios from 'axios';
-import {HomeWrap, ContentWrap } from './style';
+import HomeNav from './components/HomeNav';
+import HomeNavContent from './components/HomeNavContent';
+// import {HomeWrap, ContentWrap } from './style';
 
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {
     return (
-      <HomeWrap>
-        <Navbar />
-        <ContentWrap>
-          <Controller />
-          <Cover />
-        </ContentWrap>
-      </HomeWrap>
+      <React.Fragment>
+        <HomeNav />
+        <HomeNavContent />
+      </React.Fragment>
     );
   }
 }
 
-const mapState = state => ({});
+const mapState = state => ({
+  albumList: state.home.albumList,
+  activeIndex: state.home.activeIndex,
+  navItems: state.home.navItems,
+  playList: state.common.playList
+});
 
-const mapDispatch = dispatch => ({});
+const mapDispatch = dispatch => ({
+  
+});
 
 export default connect(
   mapState,

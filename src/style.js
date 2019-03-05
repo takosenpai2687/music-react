@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const ResetCSS = createGlobalStyle`
 	html, body, div, span, applet, object, iframe,
@@ -47,5 +47,15 @@ export const ResetCSS = createGlobalStyle`
 	html, body, #root {
 		width: 100%;
 		height: 100%;
+		min-width: 1100px;
+		min-height: 700px;
 	}
+`;
+
+export const PageWrap = styled.div`
+  width: calc(100% - 80px);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  float: left;
 `;

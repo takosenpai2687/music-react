@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b18e5da-1962-4f57-8fba-24f82fc179f3" name="Default Changelist" comment="" />
+    <list default="true" id="4b18e5da-1962-4f57-8fba-24f82fc179f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/itsumokonobashode.lrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../api/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processLRC.py" beforeDir="false" afterPath="$PROJECT_DIR$/processLRC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/controller/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/controller/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/cover/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/cover/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/cover/mind.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/cover/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/cover/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/store/actionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/store/actionCreators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/store/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/common/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/common/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/store/actionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/store/actionCreators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/store/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/store/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/pages/home/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/pages/home/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/style.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,58 +28,68 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/lrc$processLRC.coverage" NAME="processLRC Coverage Results" MODIFIED="1551079032396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lrc$processLRC.coverage" NAME="processLRC Coverage Results" MODIFIED="1551768993281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lrc$reprocessLRC.coverage" NAME="reprocessLRC Coverage Results" MODIFIED="1551079244590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-974896585">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="10" />
-          <entry key="lrc" value="8" />
-          <entry key="py" value="8" />
+          <entry key="json" value="11" />
+          <entry key="lrc" value="9" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="10" />
-          <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="8" />
+          <entry key="JSON" value="11" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="json" value="2" />
           <entry key="lrc" value="1" />
-          <entry key="py" value="1138" />
+          <entry key="py" value="1159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="1138" />
+          <entry key="Python" value="1159" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reprocessLRC.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/itsumokonobashode.lrc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="57">
+              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/processLRC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,8 +119,9 @@
         <option value="$PROJECT_DIR$/luzhouyue.json" />
         <option value="$PROJECT_DIR$/hikarunara.lrc" />
         <option value="$PROJECT_DIR$/rain.lrc" />
-        <option value="$PROJECT_DIR$/processLRC.py" />
         <option value="$PROJECT_DIR$/reprocessLRC.py" />
+        <option value="$PROJECT_DIR$/itsumokonobashode.lrc" />
+        <option value="$PROJECT_DIR$/processLRC.py" />
       </list>
     </option>
   </component>
@@ -113,6 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,7 +155,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,7 +175,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.reprocessLRC">
+  <component name="RunManager" selected="Python.processLRC">
     <configuration name="processLRC" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="lrc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,8 +226,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.reprocessLRC" />
         <item itemvalue="Python.processLRC" />
+        <item itemvalue="Python.reprocessLRC" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +247,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -314,22 +344,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/processLRC.py">
+    <entry file="file://$PROJECT_DIR$/reprocessLRC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="57">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="16" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reprocessLRC.py">
+    <entry file="file://$PROJECT_DIR$/itsumokonobashode.lrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="57">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/itsumokonobashode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="59" selection-start-column="59" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processLRC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

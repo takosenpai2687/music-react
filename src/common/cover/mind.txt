@@ -1,8 +1,0 @@
-1.获取前五个元素的高度，找出最接近父容器高度一半的元素，设其index为midStart
-2.获取后五个元素的高度，找出最接近父容器高度一半的元素，设其index为midEnd
-2.例如：cover.state -> currentLine：0，midStart：4, midEnd: 45
-3.从componentWillReceiveProps每秒会获得最新的currentTime，当currentTime大于lyrics[currentLine+1]时，
-  循环递归出lyrics中time值为currentTime以下的极大值，取其index为currentLine
-4.如果currentLine<=midstart，仅渲染currentLine所在的元素颜色
-5.如果currentLine>midStart, 修改整个p标签样式为transform：translateY(-sum(0~currentLine-midstart所有li的高度和))
-6.resize时，清空midStart和EndStart，调用initSlide

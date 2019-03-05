@@ -114,7 +114,7 @@ class Controller extends PureComponent {
           <ControlAddons>
             {this.renderTimeStamp()}
             <p>
-              <span  onClick={this.showCover} >词</span>
+              <span onClick={this.showCover}>词</span>
             </p>
             <p>
               <span className="iconfont">&#xe608;</span>
@@ -139,13 +139,13 @@ class Controller extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    // judge if musicList / index is different
+    // judge if playList / index is different
     if (
-      this.props.musicList !== nextProps.musicList ||
+      this.props.playList !== nextProps.playList ||
       this.props.index !== nextProps.index
     ) {
       this.slide();
-      this.setState({ currentMusic: nextProps.musicList[nextProps.index] });
+      this.setState({ currentMusic: nextProps.playList[nextProps.index] });
     }
   }
 
@@ -187,7 +187,13 @@ class Controller extends PureComponent {
 
   renderThumbnail() {
     if (!this.state.currentMusic) {
-      return <img src="img/loading.gif" alt="" onClick={this.showCover} />;
+      return (
+        <img
+          src="img/loading.gif"
+          alt=""
+          onClick={this.showCover}
+        />
+      );
     } else {
       return (
         <img
@@ -309,7 +315,7 @@ class Controller extends PureComponent {
       this.props.changeIndex(this.state.undoStack.pop());
     } else if (this.state.mode === MODES.RANDOM) {
       this.props.changeIndex(
-        this.generateRandom(this.props.index, this.props.musicList.length)
+        this.generateRandom(this.props.index, this.props.playList.length)
       );
     } else {
       this.props.changeIndex(this.props.index - 1);
@@ -324,7 +330,7 @@ class Controller extends PureComponent {
       this.props.changeIndex(this.state.redoStack.pop());
     } else if (this.state.mode === MODES.RANDOM) {
       this.props.changeIndex(
-        this.generateRandom(this.props.index, this.props.musicList.length)
+        this.generateRandom(this.props.index, this.props.playList.length)
       );
     } else {
       this.props.changeIndex(this.props.index + 1);
@@ -338,7 +344,7 @@ class Controller extends PureComponent {
       case MODES.RANDOM:
         this.state.undoStack.push(this.props.index);
         this.props.changeIndex(
-          this.generateRandom(this.props.index, this.props.musicList.length)
+          this.generateRandom(this.props.index, this.props.playList.length)
         );
         break;
       case MODES.SINGLE_LOOP:
@@ -440,7 +446,7 @@ const mapState = state => {
     currentTime: state.common.currentTime,
     duration: state.common.duration,
     index: state.common.index,
-    musicList: state.common.musicList,
+    playList: state.common.playList,
     playState: state.common.playState
   };
 };
@@ -462,8 +468,8 @@ const mapDispatch = dispatch => ({
     dispatch(actionCreators.changeCovered(covered));
   },
   getDataSucc(res) {
-    let musicList = res.data.musicList;
-    dispatch(actionCreators.changeMusicList(musicList));
+    let playList = res.data.playList;
+    dispatch(actionCreators.changePlayList(playList));
   }
 });
 
