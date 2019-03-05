@@ -96,7 +96,6 @@ export const CoverLyricsWrap = styled.div`
 export const CoverInfo = styled.div`
   height: ${height}px;
   width: 100%;
-  margin-left: 50px;
   font-family: ${fontFamily};
   color: #eeeeee;
   user-select: none;

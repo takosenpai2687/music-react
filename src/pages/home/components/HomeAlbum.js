@@ -9,7 +9,10 @@ export default class HomeAlbum extends Component {
   render() {
     const album = this.props.album;
     return (
-      <HomeAlbumWrap onClick={this.handleClick}>
+      <HomeAlbumWrap
+        onClick={this.handleClick}
+        className={this.props.className}
+      >
         <div>
           <img src={album.imgUrl} alt="" />
         </div>

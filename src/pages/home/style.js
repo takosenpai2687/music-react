@@ -85,7 +85,7 @@ export const HomeAlbumWrap = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
   &:hover,
-  .active {
+  &.active {
     background: ${hoverColor};
     color: #eeeeee;
   }
@@ -127,14 +127,72 @@ export const HomeAlbumWrap = styled.div`
   }
 `;
 
-export const HomeNavContentWrap = styled.div`
-  height: 100%;
+export const HomeContentWrap = styled.div`
+  height: calc(100% - 100px);
   width: calc(100% - 300px);
   float: left;
   overflow: hidden;
 `;
 
 export const ContentHeader = styled.div`
-  height: 100px;
+  height: ${height}px;
   width: 100%;
+  p {
+    user-select: none;
+    font-size: 16px;
+    font-family: ${fontFamily};
+    color: #333;
+    line-height: ${height}px;
+    height: ${height}px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: ${border};
+  }
+`;
+
+export const MusicList = styled.div`
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: pointer;
+  user-select: none;
+  ul {
+    list-style-type: none;
+    font-family: ${fontFamily};
+    li {
+      color: #333;
+      height: 100px;
+      width: 100%;
+      border-bottom: ${border};
+      &:hover, &.active{
+        background-color: ${hoverColor};
+        color: #f0f0f0;
+      }
+      p {
+        height: 50px;
+        line-height: 50px;
+        margin-left: 10px;
+      }
+      p:nth-child(1) {
+        font-size: 18px;
+      }
+      p:nth-child(2) {
+        font-size: 14px;
+      }
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+  ::-webkit-scrollbar {
+    width: 0px; /* remove scrollbar space */
+    background: transparent; /* optional: just make scrollbar invisible */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ff0000;
+  }
 `;
