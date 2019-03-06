@@ -20,7 +20,7 @@ class App extends Component {
             <IconfontCSS />
             <Navbar />
             <PageWrap>
-              <Route path="/" exact component={Home} />
+              <Route basename={process.env.PUBLIC_URL} path="/" exact component={Home} />
               <Controller />
               <Cover />
               <Magnifer />
