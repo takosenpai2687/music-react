@@ -58,7 +58,7 @@ class HomeNav extends PureComponent {
 
   componentDidMount() {
     axios
-      .get('api/albumList.json')
+      .get('./api/albumList.json')
       .then(res => {
         let albumList = res.data.albumList;
         this.props.changeAlbumList(albumList);

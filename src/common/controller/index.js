@@ -384,7 +384,7 @@ class Controller extends PureComponent {
 
   getData() {
     axios
-      .get('/api/data.json')
+      .get('./api/data.json')
       .then(res => this.props.getDataSucc(res))
       .catch(err => console.log(err));
   }

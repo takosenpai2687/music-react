@@ -14,7 +14,7 @@ class Home extends Component {
           index: 0,
           name: '本地音乐',
           icon: <span className="iconfont">&#xe638;</span>,
-          data: 'api/localMusics.json'
+          data: './api/localMusics.json'
         },
         {
           index: 1,
