@@ -1,0 +1,76 @@
+{
+  "albumList": [
+    {
+      "name": "华语",
+      "imgUrl": "./img/luzhouyue.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "日韩",
+      "imgUrl": "./img/hikarunara.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "欧美",
+      "imgUrl": "./img/shapeofyou.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "华语",
+      "imgUrl": "./img/luzhouyue.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "日韩",
+      "imgUrl": "./img/hikarunara.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "欧美",
+      "imgUrl": "./img/shapeofyou.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "华语",
+      "imgUrl": "./img/luzhouyue.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "日韩",
+      "imgUrl": "./img/hikarunara.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "欧美",
+      "imgUrl": "./img/shapeofyou.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "华语",
+      "imgUrl": "./img/luzhouyue.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "日韩",
+      "imgUrl": "./img/hikarunara.jpg",
+      "data": "./api/data.json",
+      "active":false
+    },
+    {
+      "name": "欧美",
+      "imgUrl": "./img/shapeofyou.jpg",
+      "data": "./api/data.json",
+      "active":false
+    }
+  ]
+}
