@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/music-react/static/js/runtime~main.6cabeb02.js"
   },
   {
-    "revision": "a7ea8bf91b649339badd",
-    "url": "/music-react/static/js/main.a7ea8bf9.chunk.js"
+    "revision": "5ba1649e4f08f665fea1",
+    "url": "/music-react/static/js/main.5ba1649e.chunk.js"
   },
   {
     "revision": "cb402fb134af8bd7fcc5",
     "url": "/music-react/static/js/2.cb402fb1.chunk.js"
   },
   {
-    "revision": "5dc46f5c2f4a7dfb8d41a5c13e8b0e77",
+    "revision": "05be6d0bc10a90ebcbd59f3afc6647c3",
     "url": "/music-react/index.html"
   }
 ];
