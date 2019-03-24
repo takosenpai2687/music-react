@@ -29,7 +29,7 @@ class Controller extends PureComponent {
     super(props);
     this.state = {
       currentMusic: null,
-      volume: 60,
+      volume: 20,
       muted: false,
       mode: MODES.LIST_LOOP,
       undoStack: [],

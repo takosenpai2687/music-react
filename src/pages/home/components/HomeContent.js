@@ -73,7 +73,6 @@ class HomeContent extends Component {
         <MusicList>
           <ul ref="musicList">{this.renderMusicList()}</ul>
         </MusicList>
-        <button onClick={this.test.bind(this)}>123</button>
       </HomeContentWrap>
     );
   }
@@ -99,7 +98,7 @@ class HomeContent extends Component {
   }
 
   handleClick(name, e) {
-    let nextIndex = Array.indexOf(
+    let nextIndex = Array.prototype.indexOf(
       this.props.playList.map(el => {
         return el.name;
       }),
@@ -111,14 +110,6 @@ class HomeContent extends Component {
     }
   }
 
-  test() {
-    console.log({
-      state: this.state,
-      index: this.props.activeNavIndex,
-      albumList: this.props.albumList,
-      navItems: this.props.navItems
-    });
-  }
 }
 const mapState = state => ({
   albumList: state.home.albumList,
