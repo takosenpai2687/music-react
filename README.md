@@ -1,3 +1,6 @@
+PUBLIC STABLE VERSION: https://jeremy9863.github.io/music-react/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
