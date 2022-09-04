@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "6991516793982473434b",
-    "url": "/music-react/static/js/main.69915167.chunk.js"
+    "revision": "6cfef07c38c0358ace60",
+    "url": "/music-react/static/js/main.6cfef07c.chunk.js"
   },
   {
     "revision": "6cabeb02e57b46f5cac7",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/music-react/static/js/2.b7a21cf6.chunk.js"
   },
   {
-    "revision": "ca0a3b3bf53da3f3109e52071c4d9bcc",
+    "revision": "5dd2e0f83b69fd6122e15c30691a37c9",
     "url": "/music-react/index.html"
   }
 ];
