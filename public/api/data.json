@@ -1,15 +1,6 @@
 {
     "playList": [
         {
-            "id": "001",
-            "name": "いつもこの場所で",
-            "musicUrl": "./music/itsumokonobashode.mp3",
-            "imgUrl": "./img/itsumokonobashode.jpg",
-            "artist": "彩音",
-            "lyrics": "./lrc/itsumokonobashode.json",
-            "album": ""
-        },
-        {
             "id": "002",
             "name": "Rain - 言の葉の庭",
             "musicUrl": "./music/rain.mp3",
@@ -35,6 +26,15 @@
             "artist": "Ed Sheeran",
             "lyrics": "./lrc/shapeofyou.json",
             "album": "Divide"
+        },
+        {
+            "id": "001",
+            "name": "いつもこの場所で",
+            "musicUrl": "./music/itsumokonobashode.mp3",
+            "imgUrl": "./img/itsumokonobashode.jpg",
+            "artist": "彩音",
+            "lyrics": "./lrc/itsumokonobashode.json",
+            "album": ""
         }
     ]
 }
