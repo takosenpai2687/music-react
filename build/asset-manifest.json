@@ -1,11 +1,11 @@
 {
-  "main.js": "/music-react/static/js/main.5ba1649e.chunk.js",
-  "main.js.map": "/music-react/static/js/main.5ba1649e.chunk.js.map",
+  "main.js": "/music-react/static/js/main.6cfef07c.chunk.js",
+  "main.js.map": "/music-react/static/js/main.6cfef07c.chunk.js.map",
   "runtime~main.js": "/music-react/static/js/runtime~main.6cabeb02.js",
   "runtime~main.js.map": "/music-react/static/js/runtime~main.6cabeb02.js.map",
-  "static/js/2.cb402fb1.chunk.js": "/music-react/static/js/2.cb402fb1.chunk.js",
-  "static/js/2.cb402fb1.chunk.js.map": "/music-react/static/js/2.cb402fb1.chunk.js.map",
+  "static/js/2.b7a21cf6.chunk.js": "/music-react/static/js/2.b7a21cf6.chunk.js",
+  "static/js/2.b7a21cf6.chunk.js.map": "/music-react/static/js/2.b7a21cf6.chunk.js.map",
   "index.html": "/music-react/index.html",
-  "precache-manifest.fd78f19561de07f1161d2304c0104dfa.js": "/music-react/precache-manifest.fd78f19561de07f1161d2304c0104dfa.js",
+  "precache-manifest.cedf94a004e658f8a91f58823d0ed917.js": "/music-react/precache-manifest.cedf94a004e658f8a91f58823d0ed917.js",
   "service-worker.js": "/music-react/service-worker.js"
 }
